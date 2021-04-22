@@ -3,7 +3,6 @@ import ReactQuill from 'react-quill';
 import debounce from '../helpers';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import './editor.css'
-import {IoChevronBack} from "react-icons/io5";
 
 class EditorComponent extends React.Component {
     constructor() {

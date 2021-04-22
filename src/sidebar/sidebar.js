@@ -57,7 +57,7 @@ class SidebarComponent extends React.Component {
                            onChange={this.updateSearch}
                            placeholder='Search note by name or body'/>
                     <div className='notesList'>
-                        { filteredNotes.length ?
+                        {  filteredNotes.length ?
                             filteredNotes.map((_note, _index) => {
                                 return (
                                     <div key={_index} className='note'>
@@ -82,9 +82,9 @@ class SidebarComponent extends React.Component {
     }
 
     newNoteBtnClick = () => {
-        this.setState({title: null, addingNote: !this.state.addingNote});
+        this.setState({title: 'New note', addingNote: !this.state.addingNote});
     }
-    updateTitle = (txt = 'New note') => {
+    updateTitle = (txt) => {
         this.setState({title: txt});
         if(!txt) {
             this.setState({title: 'New note'})
