@@ -1,0 +1,53 @@
+.unreadMessage {
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.newNoteBtn, .newNoteSubmitBtn {
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left: 45%;
+}
+
+.newNoteBtn:hover, .newNoteSubmitBtn:hover {
+             border: #e6e6e6;
+
+         }
+
+.newNoteBtn:active, .newNoteSubmitBtn:active {
+    transform: translateY(4px);
+}
+
+.sidebarContainer {
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.newNoteInput {
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 35px;
+    outline: none;
+    border: 1px solid black;
+}
+
+.noteList {
+    display: flex;
+    flex-direction: row;
+}
+
+.addingNoteDisplayNone {
+    display: none;
+}
+
+.cancelSubmitBtn {
+    margin-right: 50px;
+}

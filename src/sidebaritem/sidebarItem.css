@@ -1,0 +1,32 @@
+.listItem {
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+
+.listItem:focus {
+    background-color: #a8a7a7;
+}
+
+.textSection {
+    max-width: 85%;
+}
+
+
+.textSection p:last-child, p:nth-child(2) {
+    font-size: 13px;
+}
+
+.deleteIcon {
+    position: absolute;
+    right: 5px;
+    top: calc(50% - 15px);
+}
+
+.deleteIcon:hover {
+    color: red;
+}
+
