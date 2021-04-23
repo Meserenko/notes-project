@@ -33,7 +33,7 @@ class SidebarItemComponent extends React.Component {
                         onClick={() => this.selectNote(_note, _index)}>
                         <p><b>{_note.title}</b></p>
                         <p className='textSectionBody'>{removeHTMLTags(_note.body.substr(0, 20)) + '...'}</p>
-                        <p>{getTime(_note.timestamp.seconds)}</p>
+                        <p>{getTime(_note.timestamp)}</p>
                     </div>
                     <DeleteIcon onClick={() => this.deleteNote(_note)}
                                 className='deleteIcon' />
