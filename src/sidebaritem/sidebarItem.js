@@ -25,13 +25,11 @@ class SidebarItemComponent extends React.Component {
         const { _index, _note, selectedNoteIndex } = this.props;
 
         return(
-            <div key={_index}>
+            <div key={_index} onClick={() => this.selectNote(_note, _index)}>
                 <ListItem
                     className='listItem'
                     selected={selectedNoteIndex === _index}>
-                    <div
-                        className='textSection'
-                        onClick={() => this.selectNote(_note, _index)}>
+                    <div className='textSection'>
                         <p><b>{_note.title}</b></p>
                         <p className='textSectionBody'>{removeHTMLTags(_note.body.substr(0, 20)) + '...'}</p>
                         <p>{timeConverter(_note.timestamp)}</p>
