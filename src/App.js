@@ -106,13 +106,14 @@ class App extends React.Component {
                     data['id'] = _doc.id;
                     return data;
                 });
-                this.setState({notes: notes});
+                    this.setState({notes: notes});
             });
     }
 
+
     selectNote = (note, index) => this.setState({selectedNoteIndex: index, selectedNote: note});
-    noteUpdate = (id, noteObj) => {
-        firebase
+    noteUpdate = async (id, noteObj) => {
+       await firebase
             .firestore()
             .collection('notes')
             .doc(id)

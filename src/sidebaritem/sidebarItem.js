@@ -8,17 +8,18 @@ class SidebarItemComponent extends React.Component {
 
     render() {
 
+       function timeConverter(timestamp) {
+            let a = new Date(timestamp * 1000),
+                months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                year = a.getFullYear(),
+                month = months[a.getMonth()],
+                date = a.getDate(),
+                hour = a.getHours() < 10 ? '0' + a.getHours() : a.getHours(),
+                min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes(),
+                sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds(),
+                time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec
 
-        function getTime(timestamp) {
-            let date = new Date(timestamp * 1000);
-            let year = date.getFullYear();
-            let month = ("0" + (date.getMonth() + 1)).substr(-2);
-            let day = ("0" + date.getDate()).substr(-2);
-            let hour = ("0" + date.getHours()).substr(-2);
-            let minutes = ("0" + date.getMinutes()).substr(-2);
-            let seconds = ("0" + date.getSeconds()).substr(-2);
-
-            return year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds;
+            return time;
         }
 
         const { _index, _note, selectedNoteIndex } = this.props;
@@ -33,7 +34,7 @@ class SidebarItemComponent extends React.Component {
                         onClick={() => this.selectNote(_note, _index)}>
                         <p><b>{_note.title}</b></p>
                         <p className='textSectionBody'>{removeHTMLTags(_note.body.substr(0, 20)) + '...'}</p>
-                        <p>{getTime(_note.timestamp)}</p>
+                        <p>{timeConverter(_note.timestamp)}</p>
                     </div>
                     <DeleteIcon onClick={() => this.deleteNote(_note)}
                                 className='deleteIcon' />
